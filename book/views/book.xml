@@ -1,0 +1,109 @@
+<odoo>
+    <data>
+        <!-- FORM VIEW MENU BOOK -->
+        <record id="view_book_form" model="ir.ui.view">
+            <field name="name">view.book.form</field>
+            <field name="model">book.book</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="author"/>
+                            <field name="book_type_id"/>
+                        </group>
+                        <group>
+                            <field name="date_published"/>
+                            <field name="number_of_pages"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+    	</record>
+        
+        <!-- TREE VIEW MENU BOOK -->
+        <record id="view_book_tree" model="ir.ui.view">
+            <field name="name">view.book.tree</field>
+            <field name="model">book.book</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="author"/>
+                    <field name="book_type_id"/>
+                </tree>
+            </field>
+    	</record>
+
+        <!-- FORM VIEW MENU BOOK TYPE -->
+        <record id="view_book_type_form" model="ir.ui.view">
+            <field name="name">view.book.type.form</field>
+            <field name="model">book.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+            </field>
+    	</record>
+        
+        <!-- TREE VIEW MENU BOOK TYPE -->
+        <record id="view_book_type_tree" model="ir.ui.view">
+            <field name="name">view.book.type.tree</field>
+            <field name="model">book.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+    	</record>
+
+        <!-- ACTION FOR MENU BOOK -->
+        <record model="ir.actions.act_window" id="action_menu_book">
+            <field name="name">Book</field>
+            <field name="res_model">book.book</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- ACTION FOR MENU BOOK TYPE -->
+        <record model="ir.actions.act_window" id="action_menu_book_type">
+            <field name="name">Book Type</field>
+            <field name="res_model">book.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- MENU ITEM FOR BOOK -->
+        <menuitem id="root_menu_book"
+                  sequence="10"
+                  name="Books"
+        />
+
+        <menuitem id="base_menu_book"
+                  parent="book.root_menu_book"
+                  sequence="1"
+                  name="Books"
+        />
+
+        <menuitem id="menu_book"
+                  parent="book.base_menu_book"
+                  action="action_menu_book"
+                  sequence="1"
+                  name="Book"
+        />
+
+        <menuitem id="menu_book_type"
+                  parent="book.base_menu_book"
+                  action="action_menu_book_type"
+                  sequence="1"
+                  name="Book Type"
+        />
+        <!-- END OF MENU ITEM FOR MENU BOOK -->
+        
+    </data>
+</odoo>

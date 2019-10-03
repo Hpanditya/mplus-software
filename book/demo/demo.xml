@@ -1,30 +1,32 @@
 <odoo>
     <data>
-        <!--  -->
-        <!--   <record id="object0" model="book.book"> -->
-        <!--     <field name="name">Object 0</field> -->
-        <!--     <field name="value">0</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object1" model="book.book"> -->
-        <!--     <field name="name">Object 1</field> -->
-        <!--     <field name="value">10</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object2" model="book.book"> -->
-        <!--     <field name="name">Object 2</field> -->
-        <!--     <field name="value">20</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object3" model="book.book"> -->
-        <!--     <field name="name">Object 3</field> -->
-        <!--     <field name="value">30</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object4" model="book.book"> -->
-        <!--     <field name="name">Object 4</field> -->
-        <!--     <field name="value">40</field> -->
-        <!--   </record> -->
-        <!--  -->
+        <record id="book_type_novel" model="book.type">
+            <field name="name">Novel</field>
+        </record>
+
+        <record id="book_type_comic" model="book.type">
+            <field name="name">Comic</field>
+        </record>
+
+        <record id="book_1" model="book.book">
+            <field name="name">Book 1</field>
+            <field name="author">Andi</field>
+            <field name="number_of_pages">500</field>
+            <field name="book_type_id" ref="book.book_type_novel"/>
+        </record>
+
+        <record id="book_2" model="book.book">
+            <field name="name">Book 2</field>
+            <field name="author">Dana</field>
+            <field name="number_of_pages">100</field>
+            <field name="book_type_id" ref="book.book_type_comic"/>
+        </record>
+
+        <record id="book_3" model="book.book">
+            <field name="name">Book 3</field>
+            <field name="author">Via</field>
+            <field name="number_of_pages">450</field>
+            <field name="book_type_id" ref="book.book_type_novel"/>
+        </record>
     </data>
 </odoo>
